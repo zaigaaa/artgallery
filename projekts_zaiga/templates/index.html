@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+{% block title %}Sākums - ArtGallery{% endblock %}
+{% block content %}
+<h2>Laipni lūdzam <span class="highlight">ArtGallery</span>!</h2>
+<p>Izvēlies sadaļu:</p>
+<div class="cards">
+  <a class="card" href="{{ url_for('about') }}">
+    <h3>Par mums</h3>
+    <p>Uzzini par projektu un autoru.</p>
+  </a>
+  <a class="card" href="{{ url_for('artworks') }}">
+    <h3>Mākslas darbi</h3>
+    <p>Iepazīsti populārākos mākslas darbus šajā izstādē.</p>
+  </a>
+  <a class="card" href="{{ url_for('exhibitions') }}">
+    <h3>Atsauksmes</h3>
+    <p>Droši padalies - kā Tev patīk šāds izstādes formāts!</p>
+  </a>
+</div>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,360 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@600;700;900&display=swap');
+
+/* Pamatstils */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Galvene */
+header {
+  background: #000000;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header h1 a {
+  display: inline-block;
+  font-size: 96px; /* Trīs reizes lielāks nekā standarta */
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+/* Galvenais saturs */
+main {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Kartes */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.card {
+  background-color: #111111;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background-color: #1a1a1a;
+  border-color: #0ff0c9;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.card p {
+  color: #bbbbbb;
+}
+
+/* Hero sadaļa */
+.hero {
+  background-image: url('otas.jpg');
+  background-size: cover;
+  background-position: right center;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 50%;
+  padding: 0 20px;
+}
+
+.hero-tagline {
+  color: #0ff0c9;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-size: 60px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #111111;
+  padding: 25px;
+  color: #888888;
+  margin-top: 60px;
+  border-top: 1px solid #333333;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Media queries */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    max-width: 80%;
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    max-width: 100%;
+  }
+}
+
+.footer-image {
+    width: 100%; /* Attēls aizņem visu pieejamo platumu */
+    height: auto; /* Saglabā attēla proporcijas */
+    display: block; /* Pārliecinies, ka attēls tiek parādīts kā bloķējošs elements */
+    margin-top: 20px; /* Attālums starp tekstu un attēlu */
+}
+
+
+h2 {
+  font-size: 48px; /* Palielināts fonta izmērs */
+  font-weight: 700; /* Uzlabota fonta biezums */
+  color: #ffffff; /* Teksta krāsa balta */
+  margin-top: 20px; /* Augšējais attālums, lai paceltu tekstu uz augšu */
+  
+}
+h2 span {
+  color: #0ff0c9; /* Tirkīzzilā krāsa "ArtGallery" */
+}
+  
+p {
+    font-size: 24px; /* Lielāks fonta izmērs */
+    font-weight: 500; /* Vidējs fonta biezums */
+    color: #ffffff; /* Balta krāsa */
+    margin-top: 20px; /* Augšējais attālums */
+}
+
+h3 {
+    font-size: 30px; /* Palielināts fonta izmērs */
+    font-weight: 700; /* Uzlabota fonta biezums */
+    color: #ffffff; /* Teksta krāsa balta */
+    margin-top: 20px; /* Augšējais attālums, lai paceltu tekstu uz augšu */
+    
+}
+
+
+/* Dekoratīvā līnija */
+.decorative-line {
+    border: 0;
+    border-top: 2px solid #ffffff; /* Baltā krāsa */
+    width: 60%; /* Līnija būs 60% platumā no ekrāna */
+    margin: 20px auto; /* Līnija būs centrēta, ar attālumu no augšas un apakšas */
+}
+
+
+.artwork-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 70px;
+  margin-top: 50px;
+  justify-items: center;
+  justify-content: center; /* Pievienots, lai centrētu visu režģi */
+}
+
+
+.artwork-list li:hover {
+    transform: scale(1.1); /* Aplīši palielinās uz hover */
+    background-color: #0ff0c9; /* Krāsa mainās uz hover */
+}
+
+.artwork-list li a:hover {
+    color: #111111; /* Krāsas maiņa peles hover */
+}
+
+.artwork-list li {
+    display: flex; /* Izmanto flexbox, lai viegli centrētu tekstu gan horizontāli, gan vertikāli */
+    justify-content: center; /* Horizontāli centrē tekstu */
+    align-items: center; /* Vertikāli centrē tekstu */
+    width: 260px; /* Aplīša izmērs */
+    height: 260px; /* Aplīša augstums */
+    background-color: #1a1a1a; /* Aplīša fons */
+    border-radius: 50%; /* Pārvērš par apli */
+    color: #ffffff;
+    text-align: center; /* Horizontāli centrē tekstu */
+    
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Pievieno ēnu aplim */
+    transition: transform 0.3s ease-in-out; /* Pāreja, lai uzlabotu animāciju */
+    text-decoration: none;
+}
+
+.artwork-list li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+}
+
+
+
+
+
+
+
+/* Pielāgotām mazākām ierīcēm */
+@media (max-width: 768px) {
+    .artwork-list {
+        grid-template-columns: repeat(3, 1fr); /* Mazākos ekrānos būs 3 kolonnas */
+    }
+}
+
+@media (max-width: 480px) {
+    .artwork-list {
+        grid-template-columns: 1fr; /* Vismazākos ekrānos būs tikai 1 kolonna */
+    }
+}
+
+.highlight {
+  color: #0ff0c9; /* Tirkīzzilā krāsa */
+  font-weight: 700; /* Uzlabots biezums */
+  transition: color 0.3s ease; /* Pārejas efekts krāsas maiņai */
+}
+
+/* Hover efekts, kad peles rādītājs ir virs vārda */
+.highlight:hover {
+  color: #00b3b3; /* Tumšāka tirkīza krāsa uz hover */
+}
+
+
+.artwork-photo {
+  width: 150px;         /* or any fixed size */
+  height: 150px;
+  object-fit: cover;    /* makes sure the image fills the box */
+  border-radius: 50%;   /* makes it round */
+  border: 2px solid #ccc; /* optional: adds a soft border */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* optional: shadow for style */
+}
+
+.page-title {
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+.text-boxes {
+  display: flex; /* Izvieto trīs taisnstūrus rindā */
+  gap: 20px; /* Attālums starp taisnstūriem */
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.text-box {
+  flex: 1; /* Katrs taisnstūris aizņem vienādu platumu */
+  padding: 20px;
+  background-color: #333333; /* Gaiša fona krāsa */
+  border-radius: 10px; /* Noapaļoti stūri */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Viegls ēnu efekts */
+}
+
+.text-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.text-box p {
+  font-size: 14px;
+  color: #ffffff; 
+}
+
+
+.yellow-heading {
+  color: #73e2c6;
+  text-transform: uppercase;
+  text-align: center;
+  }
+
+
+.blue_h {
+  color: #73e2c6;
+  text-transform: uppercase;
+  text-align: center;
+  }
+
+.white_h {
+  color: #73e2c6;
+  text-transform: lowercase;
+  text-align: center;
+  font-style: italic;
+
+  }
+
+.feedback-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.feedback-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    color: white;
+    background-color: transparent;
+}
+
+.feedback-item.alt {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+    
+  
+
+
+
+
+

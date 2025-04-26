@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+
+{% block title %}{{ artwork['nosaukums'] }} - ArtGallery{% endblock %}
+
+{% block content %}
+<div class="artwork-detail-container">
+  <div class="artwork-header">
+    <h1 class="artwork-title">{{ artwork['nosaukums'] }}</h1>
+    
+  </div>
+  
+  <div class="artwork-content">
+    <div class="artwork-image-container">
+      {% if artwork['foto'] %}
+        <img class="artwork-image" src="{{ url_for('static', filename='images/' + artwork['foto']) }}" alt="{{ artwork['nosaukums'] }}">
+      {% else %}
+        <div class="artwork-placeholder">Attēls nav pieejams</div>
+      {% endif %}
+    </div>
+    
+    <div class="artwork-info">
+      <div class="info-item">
+        <span class="info-label">Autors:</span>
+        <span class="info-value">{{ artwork['artist'] }}</span>
+      </div>
+
+      <div class="info-item">
+        <span class="info-label">Gads:</span>
+        <span class="info-value">{{ artwork['gads'] }}</span>
+      </div>
+                  
+      <div class="info-item">
+        <span class="info-label">Valsts:</span>
+        <span class="info-value">{{ artwork['country'] }}</span>
+      </div>
+      
+
+      <div class="info-item">
+        <span class="info-label">Stils:</span>
+        <span class="info-value">{{ artwork['style'] }}</span>
+      </div>
+
+      <div class="info-item style-description">
+        <span class="info-label">Par stilu:</span>
+        <p class="description-text">{{ artwork['style_desc'] }}</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="artwork-actions">
+    <a href="{{ url_for('artworks') }}" class="back-button">← Atpakaļ uz galeriju</a>
+  </div>
+</div>
+
+<style>
+  .artwork-detail-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  .artwork-header {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+    position: relative;
+  }
+  
+  .artwork-title {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.2;
+    text-align: center;
+  }
+  
+
+  .artwork-content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .artwork-content {
+      flex-direction: column;
+    }
+  }
+  
+  .artwork-image-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #f8f8f800;
+  }
+  
+  .artwork-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+  
+  .artwork-placeholder {
+    background-color: #f0f0f0;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-style: italic;
+  }
+  
+  .artwork-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .info-label {
+    font-weight: bold;
+    color: #ffee01;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .info-value {
+    font-size: 1.1rem;
+    color: #ffffff;
+  }
+  
+  .style-description {
+    margin-top: 1rem;
+  }
+  
+  .description-text {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin: 0.5rem 0 0 0;
+    text-align: justify;
+  }
+  
+  .artwork-actions {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .back-button {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .back-button:hover {
+    background-color: #555;
+  }
+</style>
+{% endblock %}

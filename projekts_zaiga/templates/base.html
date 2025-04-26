@@ -1,0 +1,26 @@
+
+ <!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ArtGallery{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <hr class="decorative-line">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <header>
+        <h1><a href="/">ArtGallery</a></h1>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025 ArtGallery</p>
+        <img src="{{ url_for('static', filename='galvena.jpg') }}" alt="ArtGallery Image" class="footer-image">
+    </footer>
+</body>
+</html>
+
+

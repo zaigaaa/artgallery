@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Izstādes - ArtGallery{% endblock %}
+
+{% block content %}
+<h2><span class="blue_h">Dalies ar savu atsauksmi!</span></h2>
+
+<form action="/atsauksmes" method="POST">
+    <textarea name="feedback" rows="4" cols="50" placeholder="Ievadi savu atsauksmi šeit..." required></textarea>
+    <br><br>
+    <button type="submit">Nosūtīt atsauksmi</button>
+</form>
+
+<hr>
+
+<h3>Iepriekšējās atsauksmes:</h3>
+<ul class="feedback-list">
+    {% if atsauksmes %}
+        {% for item in atsauksmes %}
+            <li class="feedback-item {% if loop.index0 % 2 != 0 %}alt{% endif %}">
+                {{ item['teksts'] }}
+            </li>
+        {% endfor %}
+    {% else %}
+        <p>Vēl nav atsauksmju. Esi pirmais, kurš dalās!</p>
+    {% endif %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Mākslas darbi - ArtGallery{% endblock %}
+{% block content %}
+<h2 class="page-title">Uzzini vairāk par šīs izstādes mākslas darbiem!</h2>
+<ul class="artwork-list">
+    {% for art in artworks %}
+    <li>
+        <a href="{{ url_for('artwork_detail', artwork_id=art['id']) }}">
+            <img class="artwork-photo" src="/static/images/{{ art['foto'] }}" alt="{{ art['nosaukums'] }}">
+
+            <div>
+                {{ art['nosaukums'] }} <br>
+                
+            </div>
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

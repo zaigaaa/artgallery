@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Datu bāzes tabulas{% endblock %}
+{% block content %}
+
+<h2>Datu bāzes tabulas</h2>
+
+{% for tabula, kolonnas in struktura.items() %}
+<h3>{{ tabula }}</h3>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Kolonnas nosaukums</th>
+      <th>Tips</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for kol in kolonnas %}
+    <tr>
+      <td>{{ kol['cid'] }}</td>
+      <td>{{ kol['name'] }}</td>
+      <td>{{ kol['type'] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endfor %}
+{% endblock %}
